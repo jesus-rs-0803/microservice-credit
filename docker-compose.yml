@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+   mongo:
+      image: mongo
+      container_name: mongodb-credit
+      restart: always
+      environment:
+         MONGO_INITDB_ROOT_USERNAME: root
+         MONGO_INITDB_ROOT_PASSWORD: password
+      ports:
+         - 27018:27018
+      volumes:
+         - mongo-data:/D/microservice-credit/bd
+volumes:
+   mongo-data:
